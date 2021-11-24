@@ -1,5 +1,4 @@
 ﻿using Microsoft.Maui.Essentials;
-using System.Linq;
 
 namespace DotNetConfSouthAfrica.Core.Mobile.Services;
 

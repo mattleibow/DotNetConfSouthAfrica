@@ -1,6 +1,4 @@
-﻿using System.Linq;
-
-namespace DotNetConfSouthAfrica.Core.Services;
+﻿namespace DotNetConfSouthAfrica.Core.Services;
 
 public class OfflineWeatherService : IWeather
 {

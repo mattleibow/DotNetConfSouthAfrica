@@ -1,6 +1,4 @@
 ﻿using Microsoft.Maui.Essentials;
-using System.Diagnostics;
-using System.Linq;
 
 namespace DotNetConfSouthAfrica.Core.Mobile.Services;
 
@@ -19,12 +17,6 @@ public class DeviceGeoLocationService : IGeoLocation
     public async Task<GeoCoordinates?> GetCityAsync(double latitude, double longitude, CancellationToken cancellationToken = default)
     {
         var places = await Geocoding.GetPlacemarksAsync(latitude, longitude);
-
-        if (places is not null)
-        {
-            foreach (var placemark in places)
-                Console.WriteLine(placemark);
-        }
 
         var place = places?.FirstOrDefault();
         if (place is null)

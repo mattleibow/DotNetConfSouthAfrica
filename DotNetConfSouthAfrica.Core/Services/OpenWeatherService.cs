@@ -1,6 +1,7 @@
-﻿using System.Linq;
-using System.Net.Http;
+﻿using System.Net.Http;
 using System.Text.Json;
+
+using DotNetConfSouthAfrica.Core.Services.OpenWeatherMap;
 
 namespace DotNetConfSouthAfrica.Core.Services;
 

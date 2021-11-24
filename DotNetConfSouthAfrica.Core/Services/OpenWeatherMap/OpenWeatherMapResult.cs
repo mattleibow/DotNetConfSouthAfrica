@@ -1,6 +1,6 @@
 ﻿#nullable disable
 
-namespace DotNetConfSouthAfrica.Core.Services;
+namespace DotNetConfSouthAfrica.Core.Services.OpenWeatherMap;
 
 public class OpenWeatherMapResult
 {
