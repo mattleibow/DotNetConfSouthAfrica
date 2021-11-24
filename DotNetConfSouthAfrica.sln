@@ -1,0 +1,50 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31611.283
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetConfSouthAfrica.Mobile", "DotNetConfSouthAfrica.Mobile\DotNetConfSouthAfrica.Mobile.csproj", "{0088D30B-305B-4818-B888-93647D999219}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DotNetConfSouthAfrica.Core", "DotNetConfSouthAfrica.Core\DotNetConfSouthAfrica.Core.csproj", "{B84A5216-5CC4-4861-8C4B-9C733C8A2A04}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetConfSouthAfrica.Website", "DotNetConfSouthAfrica.Website\DotNetConfSouthAfrica.Website.csproj", "{3D988A4E-3B6A-4DC8-A7F3-274940A803E8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetConfSouthAfrica.Core.Web", "DotNetConfSouthAfrica.Core.Web\DotNetConfSouthAfrica.Core.Web.csproj", "{AAB6AFC7-30DC-4A5C-B302-F79E1D8CD573}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DotNetConfSouthAfrica.Core.Mobile", "DotNetConfSouthAfrica.Core.Mobile\DotNetConfSouthAfrica.Core.Mobile.csproj", "{10B3EDCA-73ED-4668-A118-67031519ABB2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0088D30B-305B-4818-B888-93647D999219}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0088D30B-305B-4818-B888-93647D999219}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0088D30B-305B-4818-B888-93647D999219}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{0088D30B-305B-4818-B888-93647D999219}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0088D30B-305B-4818-B888-93647D999219}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0088D30B-305B-4818-B888-93647D999219}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{B84A5216-5CC4-4861-8C4B-9C733C8A2A04}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B84A5216-5CC4-4861-8C4B-9C733C8A2A04}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B84A5216-5CC4-4861-8C4B-9C733C8A2A04}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B84A5216-5CC4-4861-8C4B-9C733C8A2A04}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3D988A4E-3B6A-4DC8-A7F3-274940A803E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3D988A4E-3B6A-4DC8-A7F3-274940A803E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3D988A4E-3B6A-4DC8-A7F3-274940A803E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3D988A4E-3B6A-4DC8-A7F3-274940A803E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AAB6AFC7-30DC-4A5C-B302-F79E1D8CD573}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AAB6AFC7-30DC-4A5C-B302-F79E1D8CD573}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AAB6AFC7-30DC-4A5C-B302-F79E1D8CD573}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AAB6AFC7-30DC-4A5C-B302-F79E1D8CD573}.Release|Any CPU.Build.0 = Release|Any CPU
+		{10B3EDCA-73ED-4668-A118-67031519ABB2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10B3EDCA-73ED-4668-A118-67031519ABB2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10B3EDCA-73ED-4668-A118-67031519ABB2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10B3EDCA-73ED-4668-A118-67031519ABB2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {61F7FB11-1E47-470C-91E2-47F8143E1572}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,112 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:DotNetConfSouthAfrica.Mobile"
+             xmlns:viewmodels="clr-namespace:DotNetConfSouthAfrica.Core.Mobile.ViewModels;assembly=DotNetConfSouthAfrica.Core.Mobile"
+             xmlns:models="clr-namespace:DotNetConfSouthAfrica.Core.Models;assembly=DotNetConfSouthAfrica.Core"
+             x:Class="DotNetConfSouthAfrica.Mobile.Views.XamlPage"
+             x:DataType="viewmodels:WeatherViewModel"
+             BackgroundColor="{DynamicResource PageBackgroundColor}"
+             Title=".NET Conf (South Africa)">
+
+    <GridLayout
+        RowDefinitions="200,*,Auto">
+
+        <VerticalStackLayout Padding="20" Spacing="20">
+            
+            <Label
+                Text="This is a XAML page!"
+                HorizontalOptions="Center" />
+
+            <Label 
+                Text="{Binding CurrentLocation.CityName, StringFormat='Current location: {0}'}" />
+
+            <Label
+                Text="{Binding WeatherLocation.CityName, StringFormat='Weather location: {0}'}" />
+
+            <Entry
+                Text="{Binding SearchText}"
+                ReturnCommand="{Binding SearchCommand}"
+                Placeholder="Search city..." />
+
+        </VerticalStackLayout>
+
+        <CollectionView
+            GridLayout.Row="1"
+            ItemsSource="{Binding DailyWeather.Daily}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="models:WeatherDaily">
+                    <GridLayout
+                        ColumnDefinitions="60,1*,1.5*"
+                        RowDefinitions="36,24"
+                        ColumnSpacing="20"
+                        RowSpacing="0"
+                        Padding="20,5">
+
+                        <Border
+                            GridLayout.Row="0"
+                            GridLayout.Column="0"
+                            GridLayout.RowSpan="2"
+                            Background="#512bdf"
+                            Stroke="Transparent"
+                            StrokeThickness="1">
+                            <Border.StrokeShape>
+                                <Ellipse />
+                            </Border.StrokeShape>
+                        </Border>
+
+                        <Label
+                            GridLayout.Row="0"
+                            GridLayout.Column="0"
+                            GridLayout.RowSpan="2"
+                            Text="{Binding Timestamp, Converter={StaticResource ShortDateConverter}}"
+                            HorizontalTextAlignment="Center"
+                            VerticalTextAlignment="Center"
+                            FontSize="20"
+                            TextColor="White"
+                            FontAttributes="Bold"
+                            LineHeight="0.75"
+                            Margin="2,-3,2,0"/>
+
+                        <Label
+                            GridLayout.Row="0"
+                            GridLayout.Column="1"
+                            VerticalOptions="Center"
+                            FontSize="20"
+                            FontAttributes="Bold"
+                            Text="{Binding Description}" />
+                        <Label
+                            GridLayout.Row="0"
+                            GridLayout.Column="2"
+                            VerticalOptions="Center"
+                            FontSize="20"
+                            FontAttributes="Bold"
+                            Text="{Binding TemperatureC, StringFormat='{0:0.0}&#x00b0;C'}" />
+
+                        <Label
+                            GridLayout.Row="1"
+                            GridLayout.Column="1"
+                            VerticalOptions="Start"
+                            FontSize="16"
+                            Text="{Binding Humidity, StringFormat='Humidity: {0}%'}" />
+                        <Label
+                            GridLayout.Row="1"
+                            GridLayout.Column="2"
+                            VerticalOptions="Start"
+                            FontSize="16"
+                            Text="{Binding WindSpeed, StringFormat='Wind Speed: {0:0.0}m/s'}" />
+
+                    </GridLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+        <Button 
+            GridLayout.Row="2"
+            Padding="20"
+            Margin="20"
+            Text="Go To Blazor" 
+            Clicked="OnGoToBlazorClicked" />
+
+    </GridLayout>
+
+</ContentPage>

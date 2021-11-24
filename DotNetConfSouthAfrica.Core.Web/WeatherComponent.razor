@@ -1,0 +1,82 @@
+﻿@inject IWeather WeatherService
+@inject IGeoLocation GeoLocationService
+
+<div class="weather-component">
+
+    <p>This component demonstrates fetching data from the server.</p>
+
+    @if (CurrentLocation == null)
+    {
+        <p><em>Loading current location...</em></p>
+    }
+    else
+    {
+        <p>Current location: @CurrentLocation.CityName</p>
+    }
+
+    @if (DailyWeather == null)
+    {
+        <p><em>Loading weather data...</em></p>
+    }
+    else
+    {
+        @if (WeatherLocation == null)
+        {
+            <p>Weather location: loading...</p>
+        }
+        else
+        {
+            <p>Weather location: @WeatherLocation.CityName</p>
+        }
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Description</th>
+                    <th>Temp. (C)</th>
+                    <th>Humidity (%)</th>
+                    <th>Wind Speed (m/s)</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var daily in DailyWeather.Daily)
+                {
+                    <tr>
+                        <td>@daily.Timestamp.ToLocalTime().ToString("d MMM")</td>
+                        <td>@daily.Description</td>
+                        <td>@daily.TemperatureC.ToString("0.0")</td>
+                        <td>@daily.Humidity.ToString("0")</td>
+                        <td>@daily.WindSpeed.ToString("0.0")</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+
+</div>
+
+@code {
+    public GeoCoordinates? CurrentLocation { get; set; }
+    public WeatherResult? DailyWeather { get; set; }
+    public GeoCoordinates? WeatherLocation { get; set; }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        if (firstRender)
+        {
+            CurrentLocation = await GeoLocationService.GetCurrentLocationAsync();
+
+            await InvokeAsync(StateHasChanged);
+
+            DailyWeather = await WeatherService.GetDailyWeatherAsync(CurrentLocation);
+
+            await InvokeAsync(StateHasChanged);
+
+            var weatherLocation = await GeoLocationService.GetCityAsync(DailyWeather.Latitude, DailyWeather.Longitude);
+            WeatherLocation = weatherLocation ?? new(DailyWeather.Latitude, DailyWeather.Longitude, "Unknown");
+
+            await InvokeAsync(StateHasChanged);
+        }
+    }
+}
